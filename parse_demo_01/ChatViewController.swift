@@ -26,8 +26,10 @@ class ChatViewController: UIViewController, UITableViewDataSource {
       tableView.rowHeight = UITableViewAutomaticDimension
       // Provide an estimated row height. Used for calculating scroll indicator
       tableView.estimatedRowHeight = 50
-
-      //tableView.separatorStyle = .none
+      let bubbleView = UIView()
+      bubbleView.layer.cornerRadius = 5
+      bubbleView.clipsToBounds = true
+      tableView.separatorStyle = .none
       fetchMessages()
       Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
 
