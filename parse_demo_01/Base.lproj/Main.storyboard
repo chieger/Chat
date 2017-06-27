@@ -118,12 +118,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi my name is Kingsley 🐶" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktv-vW-fCo">
-                                                    <rect key="frame" x="8" y="44.5" width="359" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImE-hx-AZA" userLabel="Bubble">
+                                                    <rect key="frame" x="8" y="45" width="219.5" height="37"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi my name is Kingsley 🐶" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktv-vW-fCo">
+                                                            <rect key="frame" x="8" y="8" width="203.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="ktv-vW-fCo" secondAttribute="bottom" constant="8" id="3Rd-gU-TS8"/>
+                                                        <constraint firstItem="ktv-vW-fCo" firstAttribute="leading" secondItem="ImE-hx-AZA" secondAttribute="leading" constant="8" id="Kup-d4-mGG"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ktv-vW-fCo" secondAttribute="trailing" constant="8" id="WEv-Sr-6Hm"/>
+                                                        <constraint firstItem="ktv-vW-fCo" firstAttribute="top" secondItem="ImE-hx-AZA" secondAttribute="top" constant="8" id="qWS-oi-gMP"/>
+                                                    </constraints>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuI-VH-QP7">
                                                     <rect key="frame" x="8" y="16" width="84" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -132,15 +144,16 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="ktv-vW-fCo" secondAttribute="trailing" constant="8" id="0nn-vm-L8J"/>
                                                 <constraint firstItem="nuI-VH-QP7" firstAttribute="top" secondItem="ynr-69-0dv" secondAttribute="topMargin" constant="8" id="5Oe-kS-lcx"/>
+                                                <constraint firstItem="ImE-hx-AZA" firstAttribute="top" secondItem="nuI-VH-QP7" secondAttribute="bottom" constant="8" id="I5w-Qo-4YZ"/>
                                                 <constraint firstItem="nuI-VH-QP7" firstAttribute="leading" secondItem="ynr-69-0dv" secondAttribute="leading" constant="8" id="LDV-8L-1zi"/>
-                                                <constraint firstItem="ktv-vW-fCo" firstAttribute="leading" secondItem="ynr-69-0dv" secondAttribute="leading" constant="8" id="WxO-s2-IT1"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ktv-vW-fCo" secondAttribute="bottom" constant="8" id="hmh-tR-9Ot"/>
-                                                <constraint firstItem="ktv-vW-fCo" firstAttribute="top" secondItem="nuI-VH-QP7" secondAttribute="bottom" constant="8" id="mTY-Fk-H8g"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ImE-hx-AZA" secondAttribute="trailing" constant="8" id="c0O-OZ-FQ9"/>
+                                                <constraint firstItem="ImE-hx-AZA" firstAttribute="leading" secondItem="nuI-VH-QP7" secondAttribute="leading" id="hFj-ml-NYV"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="ImE-hx-AZA" secondAttribute="bottom" constant="8" id="tTz-rn-49V"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="bubbleView" destination="ImE-hx-AZA" id="UjA-2I-Wyu"/>
                                             <outlet property="chatTextLabel" destination="ktv-vW-fCo" id="jOH-ba-D33"/>
                                             <outlet property="usernameLabel" destination="nuI-VH-QP7" id="5kD-xr-dIi"/>
                                         </connections>
